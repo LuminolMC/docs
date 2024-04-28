@@ -1,0 +1,28 @@
+{
+  "name": "documentation",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview",
+    "format": "prettier --write ."
+  },
+  "author": {
+    "name": "LuminolMC",
+    "email": "noreply@luminolmc.com",
+    "url": "https://luminolmc.com"
+  },
+  "description": "Documentation for LuminolMC all projects.",
+  "license": "AGPL-3.0-or-later",
+  "dependencies": {
+    "vue": "^3.4.25",
+    "yaml": "^2.4.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "medium-zoom": "^1.1.0",
+    "prettier": "3.2.5",
+    "vitepress": "1.1.4",
+    "vitepress-plugin-nprogress": "^0.0.4"
+  }
+}

@@ -1,0 +1,29 @@
+name: 添加新文档
+description: 发现有遗漏的内容？请在这里报告。
+title: "[Missing] "
+labels: ["missing"]
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: 需要添加哪类文档？
+      multiple: true
+      options:
+        - 配置
+        - 项目
+        - 术语
+        - 其他（请填写“额外信息”）
+    validations:
+      required: true
+  - type: textarea
+    id: add
+    attributes:
+      label: 应添加什么内容？
+      value: "1. "
+    validations:
+      required: true
+  - type: textarea
+    id: extra-information
+    attributes:
+      label: 额外信息
+      placeholder: 是否有需要添加的其他信息？
