@@ -164,7 +164,7 @@
 	#that number of ticks, then it will be removed. Setting a value to
 	#-1 disables this feature.
 	[optimizations.entity_timeouts]
-	
+
 
 	# 窒息优化
 	[optimizations.suffocation_optimization]

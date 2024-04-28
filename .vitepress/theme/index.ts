@@ -11,5 +11,4 @@ export default {
   Layout: () => {
     return h(Layout);
   },
-
 };

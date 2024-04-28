@@ -1,11 +1,11 @@
-import type { UserConfig } from 'vitepress'
-import { defineConfigWithTheme, type DefaultTheme } from 'vitepress'
+import type { UserConfig } from "vitepress";
+import { defineConfigWithTheme, type DefaultTheme } from "vitepress";
 import { zh_Hans, search as zhHansSearch } from "./zh_Hans";
 
 export default defineConfigWithTheme({
-  title: 'LuminolMC 文档',
+  title: "LuminolMC 文档",
   srcDir: "./src",
-  lang: 'zh-Hans',
+  lang: "zh-Hans",
   cleanUrls: true,
   lastUpdated: true,
 
