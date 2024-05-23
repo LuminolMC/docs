@@ -1,6 +1,7 @@
 # 配置
 
 ```toml
+
 # 修复
 [fixes]
 
@@ -8,16 +9,8 @@
 [fixes.allow_void_trading]
 enabled = false
 
-# 允许刷沙
-[fixes.allow_sand_duping]
-enabled = false
-
-# 允许不安全的传送
 [fixes.allow_unsafe_teleportation]
-enabled = false
-
-# 允许更新错误的绊线
-[fixes.allow_update_incorrect_trip_wire]
+#如果你想使用刷沙特性，请打开此项
 enabled = false
 
 # Folia修复
@@ -50,7 +43,7 @@ enable_for_player_entity = false
 [misc.warn_on_offline_mode]
 enabled = true
 
-# 服务器修改名称
+# 服务器名称
 [misc.server_mod_name]
 name = "Luminol"
 # 使用原版名称
@@ -69,10 +62,6 @@ enabled = false
 [misc.mojang_chat_sign]
 enabled = true
 
-# IO uring 支持
-[misc.io_uring_support]
-enabled = false
-
 # 用户名检查
 [misc.username_checks]
 enabled = true
@@ -81,25 +70,16 @@ enabled = true
 [misc.mojang_out_of_order_chat_check]
 enabled = true
 
-# 区域格式
-[misc.region_format]
-# 线性压缩级别
-linear_compression_level = 1
-# 线性刷新频率
-linear_flush_frequency = 10
-# 格式名称
-formatName = "ANVIL"
-# 线性刷新线程计数
-linear_flusher_thread_count = 1
-
-# tpsbar
 [misc.tpsbar]
 # Ping颜色列表
 ping_color_list = ["GREEN", "YELLOW", "RED", "PURPLE"]
+# 区块热度颜色列表
+chunkhot_color_list = ["GREEN", "YELLOW", "RED", "PURPLE"]
 # 格式
-format = "<gray>TPS<yellow>:</yellow> <tps> MSPT<yellow>:</yellow> <mspt> Ping<yellow>:</yellow> <ping>ms"
+format = "<gray>TPS<yellow>:</yellow> <tps> MSPT<yellow>:</yellow> <mspt> Ping<yellow>:</yellow> <ping>ms ChunkHot<yellow>:</yellow> <chunkhot>"
 # TPS颜色列表
 tps_color_list = ["GREEN", "YELLOW", "RED", "PURPLE"]
+# 启用TPSBAR
 enabled = false
 # 更新间隔刻数
 update_interval_ticks = 15
@@ -115,12 +95,8 @@ allow = false
 [optimizations.skip_goal_selector_tick_in_inactive_tick]
 enabled = false
 
-# 替代保持活动的处理方式
-[optimizations.alternative_keepalive_handling]
-enabled = false
-
-#Optimizes entity brains when
-#they're far away from the player
+# 优化实体大脑
+# 他们离玩家很远
 [optimizations.dab]
 # 该值定义最远的实体多久执行一次路径查找和行为。20 = 1秒
 max-tick-freq = 20
@@ -134,12 +110,8 @@ blacklisted-entities = []
 enabled = false
 
 # 异步路径处理
-[optimizations.async_path_processing]
-# 最大线程数
-max_threads = 0
+[optimizations.alternative_keepalive_handling]
 enabled = false
-# 保持活动时间
-keep_alive_time = 60
 
 # 变量实体唤醒
 [optimizations.variable_entity_waking_up]
@@ -159,10 +131,11 @@ max-loads-per-tick = 0
 delay_ticks = 10
 enabled = true
 
-#These values define a entity's maximum lifespan. If an
-#entity is in this list and it has survived for longer than
-#that number of ticks, then it will be removed. Setting a value to
-#-1 disables this feature.
+# 窒息优化
+[optimizations.suffocation_optimization]
+enabled = false
+
+#这些值定义实体的最大寿命。 如果entity 在此列表中，并且其生存时间超过tick 的数量，然后它将被删除。将值设置为-1 禁用此功能。
 [optimizations.entity_timeouts]
 MOOSHROOM = -1
 MAGMA_CUBE = -1
@@ -290,24 +263,4 @@ BAT = -1
 DOLPHIN = -1
 TADPOLE = -1
 FIREWORK_ROCKET = -1
-
-# 窒息优化
-[optimizations.suffocation_optimization]
-enabled = false
-
-# 游戏玩法
-[gameplay]
-
-# Leaves Bladeren 协议
-[gameplay.leaves_bladeren_protocol]
-# 启用 MSPT 同步协议
-enable_mspt_sync_protocol = false
-# 启用基本协议
-enable_base_protocol = false
-# MSPT 同步间隔
-mspt_sync_interval = 20
-
-# Leaves Carpet 协议
-[gameplay.leaves_carpet_protocol]
-enabled = false
 ```
