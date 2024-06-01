@@ -30,7 +30,7 @@ Luminol 保留了与所有 Paper 插件的完全兼容性，实现无缝过渡�
 :::
 
 如果你在从 CraftBukkit、Spigot 或 Paper
-迁移过程中遇到任何问题，请随时通过[我们的 Discord 服务器](https://discord.gg/5hgtU72w33)（`#support` 频道）寻求支持。
+迁移过程中遇到任何问题，请随时通过[我们的 Discord 服务器](https://discord.gg/Qd7m3V6eDx)（`#support` 频道）寻求支持。
 
 ### 从原版
 
