@@ -1,4 +1,4 @@
-# Luminol Documentation
+# Luminol docs **(Fork from [Leaves/Documentation](https://github.com/LeavesMC/Documentation))**
 
 ## Getting Started
 
