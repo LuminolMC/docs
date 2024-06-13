@@ -43,4 +43,3 @@ The docs (e.g., `.md` files in the `/src` folder) is [CC-BY-SA-4.0](https://gith
 
 The supporting code is
 [AGPL-3.0](https://github.com/LuminolMC/docs/blob/main/LICENSE) licensed.
-
