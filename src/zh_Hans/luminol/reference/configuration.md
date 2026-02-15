@@ -1,3 +1,7 @@
+# Luminol Config
+
+关于Luminol的配置文件，我们为其提供了详细的注释，内容如下:
+
 ### `unsupported.disable_check_for_folia_supported`
 
 ```toml
@@ -35,8 +39,8 @@
 	#禁用异步捕获器，以防止一些虽支持 Folia 但逻辑有问题的插件导致的崩溃。
 	#ATTENTION: Would cause region deadlock when getChunkAt was incorrectly called!
 	#注意：如果错误地调用 getChunkAt，会导致区域死锁！
-	#           See: https://github.com/PaperMC/Folia/issues/280 which is resolved in folia(https://github.com/PaperMC/Folia/commit/2e7bc0721af95196c85500c7bb136aeea0bc12ce)
-	#           参见：https://github.com/PaperMC/Folia/issues/280 ，该问题已在 Folia 中通过提交 https://github.com/PaperMC/Folia/commit/2e7bc0721af95196c85500c7bb136aeea0bc12ce 修复。
+	#See: https://github.com/PaperMC/Folia/issues/280 which is resolved in folia(https://github.com/PaperMC/Folia/commit/2e7bc0721af95196c85500c7bb136aeea0bc12ce)
+	#参见：https://github.com/PaperMC/Folia/issues/280 ，该问题已在 Folia 中通过提交 https://github.com/PaperMC/Folia/commit/2e7bc0721af95196c85500c7bb136aeea0bc12ce 修复。
 	#DO NOT ENABLE UNLESS YOU KNOW WHAT YOU ARE DOING!!!
 	#除非完全清楚后果，否则不要启用此选项！！！
 	#
@@ -469,4 +473,40 @@
 	#每个实体丢弃该缓存的间隔（tick）。
 	delay_ticks = 10
 	enabled = true
+```
+
+# Paper Config
+由于Folia复用了Paper的配置文件，所以其添加的部分我们在此也做额外说明:
+
+## paper-global.yml
+```yaml
+threaded-regions:
+  #网格系数，决定着tick region的单位大小(即边长为2 ^ n(n为网格系数)个区块),改变此值可以影响tick region的分裂与合并，通常不建议改动此值，过低会导致regionizer的锁竞争过于剧烈而导致卡顿，过高则会导致tick region过大对多核心利用能力下降
+  grid-exponent: -1
+  #tick region所使用的调度器类型，目前有EDF和WORK_STEALING两类，但是目前WORK_STEALING可能仍有bug
+  scheduler: EDF
+  #分配给folia的tick region的线程数，-1为自动分配，我们推荐您改动此值因为自动分配通常会分配过少的线程数
+  threads: 24
+```
+## paper-world-defaults.yml
+```yaml
+chunks:
+  #避免玩家和实体移动进入未初始加载的区块中（即没有区块持有者的位置），folia上此配置用于防止实体进入这些区域导致崩溃，请勿随意关闭该项
+  prevent-moving-into-unloaded-chunks: true
+```
+
+# Kaiiju
+我们引入了Kaiiju的实体限制器用于简单限制实体的数量，配置说明如下:
+
+## kaiiju_entity_limits.yml
+```yaml
+#是否启用
+enabled: false
+#以美西螈为例（这里的名字是其对应的类名）
+#注意这里的分割单位是tick region
+Axolotl:
+  #单个tick最多能tick的数量，多出来的实体会被推迟到下一个tick再tick
+  limit: 1000
+  #最多存在的数量，超过该数量后多出来的实体会被删除
+  removal: 2000
 ```

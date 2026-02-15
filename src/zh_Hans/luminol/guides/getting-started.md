@@ -13,7 +13,7 @@
 
 ## 下载 Luminol
 
-Luminol 在我们的[网站的下载页面](https://luminolmc.com/downloads/luminol) 直接提供可运行的服务端。
+Luminol 在我们的[网站的下载页面](https://luminolsuki.moe/download) 直接提供可运行的服务端。
 
 点击构建号以下载文件。
 
@@ -37,3 +37,7 @@ java -Xmx4G -Xms4G -jar luminol.jar --nogui
 
 要配置服务端，请查看 [Luminol 配置](../reference/configuration)
 和 [Paper 配置](https://docs.papermc.io/paper/reference/configuration)。
+
+此外，我们推挤您在使用大堆内存时配合ZGC和大叶文件，这能显著减小因为GC导致的暂停现象
+
+同时对于服务器操作系统我们推荐您使用Linux,在Windows上MC可能会由于NIO的原因导致IO线程负载过高
