@@ -20,7 +20,7 @@ export const zh_Hans = defineConfig({
     },
 
     editLink: {
-      pattern: "https://github.com/LeavesMC/Documentation/edit/main/src/:path",
+      pattern: "https://github.com/LuminolMC/docs/edit/main/src/:path",
       text: "在 GitHub 上编辑此页面",
     },
 
@@ -89,7 +89,7 @@ function nav(): DefaultTheme.NavItem[] {
       items: [
         {
           text: "主站",
-          link: "https://luminolmc.com",
+          link: "https://luminolsuki.moe",
         },
       ],
     },
