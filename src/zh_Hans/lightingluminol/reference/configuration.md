@@ -56,6 +56,12 @@
 	#   除非完全清楚后果，否则不要启用此选项！！！
 	#
 	enable_command_block = false
+	#Enable waypoint and waypoint command.
+	#启用路径点（waypoint）及路径点相关命令。
+	#WARN: Still under testing
+	#警告：该功能仍在测试中。
+	#
+	enable_waypoints_and_waypoint_command = false
 ```
 
 ### `fixes.prevent_incorrect_teleport_async_calls_during_move_event`
